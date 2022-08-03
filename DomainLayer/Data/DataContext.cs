@@ -16,15 +16,15 @@ namespace DomainLayer.Data
                 "server=.;database=Oniondb;User Id=sa;Password=B1Admin;");
             }
         }
-        //protected override void OnModelCreating(ModelBuilder modelBuilder)
-        //{
-        //    base.OnModelCreating(modelBuilder);
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
 
-        //    modelBuilder.Entity<Book>()
-        //        .HasOne<Author>()
-        //        .WithMany(x => x.Books)
-        //        .HasForeignKey(x => x.AuthorId);
-        //}
+            modelBuilder.Entity<Book>()
+                .HasOne<Author>()
+                .WithMany(x => x.Books);
+                //.HasForeignKey(x => x.AuthorId);
+        }
 
         public DbSet<Author> Authors { get; set; }
         public DbSet<Book> Books { get; set; }

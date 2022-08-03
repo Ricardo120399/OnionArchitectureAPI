@@ -17,7 +17,7 @@ namespace OnionArchitectureAPI.Controllers
         [HttpGet]
         public async Task<ActionResult<List<Author>>> Get()
         {
-            return Ok(await _context.Authors./*Include(x => x.Books).*/ToListAsync());
+            return Ok(await _context.Authors.Include(x => x.Books).ToListAsync());
         }
         [HttpGet("{id}")]
         public async Task<ActionResult<List<Author>>> Get(int id)
