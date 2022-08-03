@@ -17,7 +17,7 @@ namespace OnionArchitectureAPI.Controllers
         [HttpGet]
         public async Task<ActionResult<List<Author>>> Get()
         {
-            return Ok(await _context.Authors.ToListAsync());
+            return Ok(await _context.Authors./*Include(x => x.Books).*/ToListAsync());
         }
         [HttpGet("{id}")]
         public async Task<ActionResult<List<Author>>> Get(int id)
@@ -44,11 +44,7 @@ namespace OnionArchitectureAPI.Controllers
 
             dbAuthor.Name = request.Name;
             dbAuthor.LastName = request.LastName;
-            dbAuthor.Address = request.Address;
-            dbAuthor.City = request.City;
-            dbAuthor.Country = request.Country;
             dbAuthor.Age = request.Age;
-            dbAuthor.BirthDate = request.BirthDate;
 
             await _context.SaveChangesAsync();
 

@@ -43,7 +43,6 @@ namespace OnionArchitectureAPI.Controllers
                 return BadRequest("Book not found");
 
             dbBook.Title = request.Title;
-            dbBook.AuthorId = request.AuthorId;
 
             await _context.SaveChangesAsync();
 
