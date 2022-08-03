@@ -5,6 +5,5 @@ namespace DomainLayer.Models
     {
         public string Title { get; set; } = string.Empty;
         public int AuthorId { get; set; }
-        //public Author Author { get; set; }
     }
 }

@@ -8,7 +8,7 @@ namespace RepositoryLayer.Repository
     public class Repository <T> : IRepository<T> where T : BaseEntity
     {
         private readonly DataContext _context;
-        private DbSet<T> entities;
+        private readonly DbSet<T> entities;
 
         public Repository(DataContext dataContext)
         {

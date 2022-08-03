@@ -23,7 +23,6 @@ namespace DomainLayer.Data
             modelBuilder.Entity<Book>()
                 .HasOne<Author>()
                 .WithMany(x => x.Books);
-                //.HasForeignKey(x => x.AuthorId);
         }
 
         public DbSet<Author> Authors { get; set; }
